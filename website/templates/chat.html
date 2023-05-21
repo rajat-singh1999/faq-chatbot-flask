@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Chandu">Chandu</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Bhola">Bhola</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Gopal">Gopal</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Golu">Golu</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Ravi">Ravi</a>
+            <a class="nav-item nav-link" id="home" href="/chat/Ramu">Ramu</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+
+        </div>
+    </div>
+</nav>
+
+<p class="d-none">{ c = "/chat/"+name }</p>
+<br />
+<br />
+<div class="container">
+    <h2>{{ name }}</h2>
+</div>
+<br />
+<div class="container" action="{{ c }}">
+    <form method="POST">
+        <textarea name="message" id="message" class="form-control"></textarea>
+        <br />
+        <div align="center">
+        <button type="submit" class="btn btn-dark">Go!</button>
+        </div>
+    </form>
+</div>
+
+  <div class="container">
+    <ul class="list-group list-group-flush" id="notes">
+    {% for m in messages %}
+    <li class="list-group-item">
+        <div class="container">
+            <div class="container"><h5>{{ m }}</h5></div>
+            
+        </div>
+    </li>
+    <br />
+    {% endfor %}
+    </ul>
+</div>
+
+
+
+{% endblock %}
