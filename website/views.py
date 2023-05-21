@@ -9,8 +9,6 @@ from dotenv.main import load_dotenv
 import os
 load_dotenv()
 
-
-
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
