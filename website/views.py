@@ -1,9 +1,13 @@
+from concurrent.futures import process
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
 import requests
 import json
 from flask_login import login_required, current_user
 from .models import User, Prompt
 from . import db
+from dotenv.main import load_dotenv
+import os
+
 
 
 views = Blueprint('views', __name__)
@@ -40,6 +44,9 @@ def solve(name):
             'Ramu':['Ramu: My name is Ramu, I am a banking expert. Come after lunch time!']
             }
 
+    load_dotenv()
+    favorite_language = os.environ['API_KEY']
+
     for i in m_names.keys():
         t = Prompt.query.filter_by(user_id=current_user.id, char_name=i)
         for j in t:
@@ -56,7 +63,7 @@ def solve(name):
             'sessionID': '-1',
             'voiceResponse': 'False'}
             headers = {
-            'CONVAI-API-KEY': '382837905acc0a7153694e508ba43307'
+            'CONVAI-API-KEY': favorite_language
             }
             
             response = requests.request("POST", url, headers=headers, data=payload)
