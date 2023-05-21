@@ -28,12 +28,12 @@ def index():
 @login_required
 def solve(name):
     chars = {
-        'Chandu':os.environ['Chandu'], 
-        'Golu': os.environ['Golu'], 
-        'Ravi': os.environ['Ravi'], 
-        'Bhola': os.environ['Bhola'], 
-        'Gopal': os.environ['Gopal'],
-        'Ramu': os.environ['Ramu']
+        'Chandu':'a3290b94-f6da-11ed-92a9-42010a400002', 
+        'Golu': '61dadc76-f6f3-11ed-aedd-42010a400002', 
+        'Ravi': 'c9cbcd4c-f6ec-11ed-a8e4-42010a400002', 
+        'Bhola': 'babad10e-f6f1-11ed-b4c2-42010a400002', 
+        'Gopal': '5fdecad0-f6ea-11ed-bcdf-42010a400002',
+        'Ramu': '044c1734-f6f6-11ed-9e28-42010a400002'
     }
 
     m_names = {
@@ -63,7 +63,7 @@ def solve(name):
             'sessionID': '-1',
             'voiceResponse': 'False'}
             headers = {
-            'CONVAI-API-KEY': favorite_language
+            'CONVAI-API-KEY': '382837905acc0a7153694e508ba43307'
             }
             
             response = requests.request("POST", url, headers=headers, data=payload)
