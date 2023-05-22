@@ -43,7 +43,7 @@ def solve(name):
             'Ramu':['Ramu: My name is Ramu, I am a banking expert. Come after lunch time!']
             }
 
-    favorite_language = os.environ['API_KEY']
+    #favorite_language = os.environ['API_KEY']
 
     for i in m_names.keys():
         t = Prompt.query.filter_by(user_id=current_user.id, char_name=i)
