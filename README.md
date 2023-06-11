@@ -18,3 +18,5 @@ website provides a user-friendly and efficient solution for accessing
 topic-specific information. The utilization of Flask and AWS EC2 ensures the
 website's reliability, scalability, and availability, making it suitable for a
 wide range of users and applications.
+
+Read the pdf or docx file for a detailed report on the project
