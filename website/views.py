@@ -5,9 +5,9 @@ import json
 from flask_login import login_required, current_user
 from .models import User, Prompt
 from . import db
-from dotenv.main import load_dotenv
+#from dotenv.main import load_dotenv
 import os
-load_dotenv()
+#load_dotenv()
 
 views = Blueprint('views', __name__)
 
